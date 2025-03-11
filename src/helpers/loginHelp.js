@@ -3,7 +3,7 @@ import { auth } from "@/config/firebase";
 import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/config/firebase"; // Firestore instance
 
-
+// Function to log in with Email and Password
 export const loginWithEmailAndPassword = async (email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
@@ -16,7 +16,7 @@ export const loginWithEmailAndPassword = async (email, password) => {
   }
 };
 
-
+// Function to log in with Google (with user existence check)
 export const loginWithGoogle = async () => {
   try {
     const provider = new GoogleAuthProvider();

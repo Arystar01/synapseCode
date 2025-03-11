@@ -15,9 +15,7 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      console.log("Auth State Changed:", user ? "Logged In" : "Logged Out");
       if (user) {
-        console.log("User ID:", user.uid);
         setUser(user);
 
         // ✅ Redirect to dashboard only when user is on login, register, or home
